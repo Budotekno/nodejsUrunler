@@ -1,0 +1,92 @@
+
+    <!-- Start Content -->
+    <div class="container py-5">
+        <div class="row">
+
+           
+            <div class="col-lg-12">
+                <div class="row">
+                    <div class="col-md-6">
+                        <ul class="list-inline shop-top-menu pb-3 pt-1">
+                            <li class="list-inline-item">
+                                <h3>Ürün Listesi</h3>
+                            </li>
+                            
+                        </ul>
+                    </div>
+                    <div class="col-md-6 pb-4">
+                       
+                    </div>
+                </div>
+
+                <div class="row">
+                    <% data.forEach(i => { %>
+                     
+                        <div class="col-md-3">
+                            <div class="card mb-4 product-wap rounded-0">
+                                <div class="card rounded-0">
+                                    <img class=" img-center" width="250"
+                                    height="250"
+                                    src="<%= i.img %> ">
+                                    <div class="card-img-overlay rounded-0 product-overlay d-flex align-items-center justify-content-center">
+                                        <ul class="list-unstyled">
+                                            
+                                            <li>
+                                                <a class="btn btn-success text-white mt-2" href="/productDetails/<%= i.id %>">
+                                                    <i class="far fa-eye"></i>
+                                                        Detay
+                                                </a>
+                                            </li>
+                                        
+                                        </ul>
+                                    </div>
+                                    
+                                </div>
+                                <div class="card-body">
+                                    <a href="/productDetails/<%= i.id %> " class="h3 text-decoration-none ">
+                                        <p class="text-center mb-0">
+                                            <b>
+                                                <%= i.marka %>  - <%= i.model %>
+                                            </b>
+                                        </p>
+                                    </a>
+                                    <ul class="w-100 list-unstyled d-flex justify-content-between mb-0">
+                                        <li>  </li>
+                                        <li class="pt-2">
+                                            <span class="product-color-dot color-dot-red float-left rounded-circle ml-1"></span>
+                                            <span class="product-color-dot color-dot-blue float-left rounded-circle ml-1"></span>
+                                            <span class="product-color-dot color-dot-black float-left rounded-circle ml-1"></span>
+                                            <span class="product-color-dot color-dot-light float-left rounded-circle ml-1"></span>
+                                            <span class="product-color-dot color-dot-green float-left rounded-circle ml-1"></span>
+                                        </li>
+                                    </ul>
+                                    <ul class="list-unstyled d-flex justify-content-center mb-1">
+                                        <li>
+                                            <i class="text-warning fa fa-star"></i>
+                                            <i class="text-warning fa fa-star"></i>
+                                            <i class="text-warning fa fa-star"></i>
+                                            <i class="text-muted fa fa-star"></i>
+                                            <i class="text-muted fa fa-star"></i>
+                                        </li>
+                                    </ul>
+                                    <p class="text-center mb-0">
+                                        <%= i.fiyat %> ₺ 
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+
+                    <% }) %>
+                    
+
+                    
+                    
+                </div>
+               
+            </div>
+
+        </div>
+    </div>
+    <!-- End Content -->
+
+    <%- include("../../partials/referance") %>  
