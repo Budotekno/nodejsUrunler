@@ -21,7 +21,7 @@ app.use(ejsLayouts);//modülü aktif ettik
 
 app.use("/login", (req,res)=>
 {
-    //app.set("layout","./admin/pages/login/login")
+    app.set("layout","./admin/pages/login/login")
     res.render("admin/pages/login/login")
 }
 )
@@ -75,15 +75,17 @@ app.use("/home", (req,res)=>
         
     }
 )
-app.use("/", (req,res)=>
+app.use("/", async (req,res)=>
     {
-        db.execute("select * from product")
-            .then(result => {
-               // console.log(result[0]);
 
-                res.render("vitrin/pages/home/home",{data:result[0]});
-            })
-            .catch(err => console.log(err));
+        try {
+            
+            const [result,] = await db.execute("select * from product");
+            res.render("vitrin/pages/home/home",{data:result});
+        } catch (error) {
+            console.log(error);
+        }
+
         
     }
 )
