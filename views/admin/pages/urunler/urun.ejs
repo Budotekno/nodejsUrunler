@@ -1,0 +1,55 @@
+
+<br>
+<br>
+
+<div class="container">
+
+    <a class="btn btn-success">Yeni Ürün</a>
+
+    <br>
+    <br>
+
+    <table class="table table-striped">
+        <thead>
+      <tr>
+        <th scope="col">#</th>
+        <th scope="col">Marka</th>
+        <th scope="col">Model</th>
+        <th scope="col">Fiyat</th>
+        <th scope="col">Sil</th>
+        <th scope="col" >Güncelle</th>
+        <th scope="col" >Detay</th>
+      </tr>
+    </thead>
+    <tbody>
+    
+        <% data.forEach(i => { %>
+     
+            <tr>
+                <th scope="row"><%= i.id %> </th>
+                <td><%= i.marka %> </td>
+                <td><%= i.model %> </td>
+                <td><%= i.fiyat %> ₺ </td>
+                <td>
+                    <a class="btn btn-danger">Sil</a>
+                </td>
+                <td>
+                    <a class="btn btn-warning">Güncelle</a>
+                </td>
+                <td>
+                    <a href="/productDetails/<%= i.id %> " target="_blank" class="btn btn-default">Detay</a>
+                </td>
+              </tr>
+        
+        <% }) %>
+     
+      
+      
+    </tbody>
+    
+    </table>
+
+</div>
+
+
+
