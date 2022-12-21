@@ -1,0 +1,68 @@
+
+<br>
+
+
+<div class="container">
+    
+
+    <h2>
+        <b>Mesaj Listesi</b>
+    </h1>
+    <br>
+
+    <% if (data==0) { %>
+        <div class="alert alert-danger" role="alert">
+            Gönderilen mesaj bulunmamaktadır!
+          </div> 
+    <% } %>
+
+
+    <% if (data!=0) { %>
+
+        <table class="table table-striped">
+            <thead>
+          <tr>
+            <th scope="col">#</th>
+            <th scope="col">Adı</th>
+            <th scope="col">Soyadı</th>
+            <th scope="col">Mail</th>
+            <th scope="col">Konu</th>
+            <th scope="col" style="width: 400px;">Mesaj</th>
+           
+            <th scope="col">Sil</th>
+           
+            
+          </tr>
+        </thead>
+        <tbody>
+        
+            <% let a =1 %> 
+            <% data.forEach(i => { %>
+         
+                <tr>
+                    <th scope="row"><%= a %>  </th>
+                    <td><%= i.adi %> </td>
+                    <td><%= i.soyadi %> </td>
+                    <td><%= i.mail %> </td>
+                    <td><%= i.konu %> </td>
+                    <td style="text-align: justify;"><%= i.mesaj %> </td>
+                    <td>
+                        <a class="btn btn-danger" href="/adminMesajSil/<%= i.id %> ">Sil</a>
+                    </td>
+                    
+                   
+                  </tr>
+    
+                  <% a++ %> 
+            
+            <% }) %>
+         
+          
+          
+        </tbody>
+        
+        </table>
+     
+    <% } %>
+
+</div>

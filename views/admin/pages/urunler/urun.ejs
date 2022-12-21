@@ -1,53 +1,92 @@
 
 <br>
-<br>
+
 
 <div class="container">
 
-    <a class="btn btn-success">Yeni Ürün</a>
+    <h2>
+        <b>Ürün Listesi</b>
+    </h1>
+    <br>
 
-    <br>
-    <br>
+
+    <div class="row">
+        
+        <div class="col-md-8">
+            <a href="/adminYeniUrun" class="btn btn-success">Yeni Ürün</a>
+        </div>
+        <div class="col-md-4">
+
+            <form action="/adminUrunAra" method="post">
+                <div class="input-group mb-3">
+                    <input type="text" class="form-control" placeholder="Model adını yazınız..." name="aranacakKelime"  aria-describedby="basic-addon1">
+                    <button type="submit" class="input-group-text" id="basic-addon1">Ara</button>
+                  </div>
+            </form>
+
+          
+          
+        </div>
+
+    </div>
+
+    <% if (data==0) { %>
+        <div class="alert alert-danger" role="alert">
+            Aradığınız kelime bulunamamıştır. Lütfen tekrardan deneyiniz!
+          </div> 
+    <% } %>
+
+   <% if (data!=0) { %>
 
     <table class="table table-striped">
         <thead>
-      <tr>
+    <tr>
         <th scope="col">#</th>
+        <th scope="col">Fotoğraf</th>
         <th scope="col">Marka</th>
         <th scope="col">Model</th>
         <th scope="col">Fiyat</th>
         <th scope="col">Sil</th>
         <th scope="col" >Güncelle</th>
         <th scope="col" >Detay</th>
-      </tr>
+    </tr>
     </thead>
     <tbody>
     
+        <% let a =1 %> 
         <% data.forEach(i => { %>
-     
+    
             <tr>
-                <th scope="row"><%= i.id %> </th>
+                <th scope="row"><%= a %> </th>
+                <td>
+                    <img src="<%= i.img %>" style="border-radius: 5px; box-shadow: 2px 2px 10px #888;"  width="100" class="img-fluild" alt="">    
+                </td>
                 <td><%= i.marka %> </td>
                 <td><%= i.model %> </td>
                 <td><%= i.fiyat %> ₺ </td>
                 <td>
-                    <a class="btn btn-danger">Sil</a>
+                    <a class="btn btn-danger" href="/adminUrunSil/<%= i.id %> ">Sil</a>
                 </td>
                 <td>
-                    <a class="btn btn-warning">Güncelle</a>
+                    <a class="btn btn-warning" href="/adminUrunEditGet/<%= i.id %> ">Güncelle</a>
                 </td>
                 <td>
                     <a href="/productDetails/<%= i.id %> " target="_blank" class="btn btn-default">Detay</a>
                 </td>
-              </tr>
+            </tr>
+
+            <% a++ %> 
         
         <% }) %>
-     
-      
-      
+    
+    
+    
     </tbody>
     
     </table>
+    
+   <% } %>
+     
 
 </div>
 

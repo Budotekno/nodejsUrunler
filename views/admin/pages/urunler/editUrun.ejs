@@ -1,0 +1,138 @@
+
+<div class="container">
+
+    <br>
+<form action="/adminUrunEdit" method="post">
+
+    <div class="row">
+
+        <% data.forEach(i => { %>
+
+            <div class="col-md-6">
+
+
+                    <input hidden type="text" value="<%= i.id %>" required class="form-control"  name="id" >
+
+                    <div class="mb-3">
+                        <label for="">Marka Adı</label>
+                        <input type="text" value="<%= i.marka %> " required class="form-control"  name="marka" placeholder="Marka adını yazınız...">
+                    </div>
+                
+                    <div class="mb-3">
+                        <label for="">Model Adı</label>
+                        <input type="text" value="<%= i.model %>" required class="form-control"  name="model" placeholder="Model adını yazınız...">
+                    </div>
+
+                    <div class="mb-3">
+                        <label for="">Fiyat</label>
+                        <input type="number" value="<%= i.fiyat %>" required required class="form-control"  name="fiyat" placeholder="Fiyatı yazınız...">
+                    </div>
+
+                    
+                    <div class="mb-3">
+                        <label for="">İşletim Sistemi</label>
+                        <input type="text" value="<%= i.ısletimSistemi %>" required required class="form-control"  name="ısletimSistemi" placeholder="İşletim sistemini yazınız...">
+                    </div>
+
+                    
+                    <div class="mb-3">
+                        <label for="">Dahili Hafıza </label>
+                        <input type="number" value="<%= i.dahiliHafiza %>" required required class="form-control"  name="dahiliHafiza" placeholder="Dahili hafızayı yazınız...">
+                    </div>
+
+                    
+                    <div class="mb-3">
+                        <label for="">Ekran Boyutu</label>
+                        <input type="text" value="<%= i.ekranBoyutu %>" required required class="form-control"  name="ekranBoyutu" placeholder="Ekran boyutunu yazınız...">
+                    </div>
+
+                    
+                    <div class="mb-3">
+                        <label for="">Ram Bellek</label>
+                        <input type="number" value="<%= i.ramBellek %>" required required class="form-control"  name="ramBellek" placeholder="Ram belleği yazınız...">
+                    </div>
+
+                    
+                    <div class="mb-3">
+                        <label for="">Arka Kamera</label>
+                        <input type="number" value="<%= i.arkaKamera %>" required required class="form-control"  name="arkaKamera" placeholder="Arka kamerayı yazınız...">
+                    </div>
+
+                    
+                    <div class="mb-3">
+                        <label for="">Ön Kamera</label>
+                        <input type="number" value="<%= i.onKamera %>" required required class="form-control"  name="onKamera" placeholder="Ön kamerayı yazınız...">
+                    </div>
+
+                
+            
+
+            </div>
+
+            <!-- col-6 -->
+
+            <div class="col-md-6">
+
+                <div class="mb-3">
+                    <label for="">Renk</label>
+                    <input type="text" value="<%= i.renk %>" required required class="form-control"  name="renk" placeholder="Renk adını yazınız...">
+                </div>
+                <div class="mb-3">
+                    <label for="">Garanti</label>
+                    <input type="text" value="<%= i.garanti %>" required required class="form-control"  name="garanti" placeholder="Garanti durumunu yazınız...">
+                </div>
+                
+                <div class="mb-3">
+                    <label for="">Durumu</label>
+                    <input type="text" value="<%= i.durumu %>" required required class="form-control"  name="durumu" placeholder="Durumunu yazınız...">
+                </div>
+
+                <div class="mb-3">
+                    <label for="">Fotoğraf Url 1</label>
+                    <input type="text" required value="<%= i.img %>" class="form-control"  name="img" placeholder="Fotoğraf url'i yazınız...">
+                </div>
+
+                <div class="mb-3">
+                    <label for="">Fotoğraf Url 2</label>
+                    <input type="text" required  value="<%= i.img1 %>" class="form-control"  name="img1" placeholder="Fotoğraf url'i yazınız...">
+                </div>
+
+                <div class="mb-3">
+                    <label for="">Fotoğraf Url 3</label>
+                    <input type="text" required value="<%= i.img2 %>" class="form-control"  name="img2" placeholder="Fotoğraf url'i yazınız...">
+                </div>
+
+                <div class="mb-3">
+                    <label for="">Fotoğraf Url 4</label>
+                    <input type="text" required value="<%= i.img3 %>" class="form-control"  name="img3" placeholder="Fotoğraf url'i yazınız...">
+                </div>
+
+                <div class="mb-3">
+                    <label for="">Fotoğraf Url 5</label>
+                    <input type="text" required value="<%= i.img4 %>" class="form-control"  name="img4" placeholder="Fotoğraf url'i yazınız...">
+                </div>
+
+                <div class="mb-3">
+                    <label for="">Fotoğraf Url 6</label>
+                    <input type="text" required value="<%= i.img5 %>" class="form-control"  name="img5" placeholder="Fotoğraf url'i yazınız...">
+                </div>
+
+            </div>
+
+        
+        <% }) %>
+    </div>
+
+  
+
+    <div class="mb-3">
+        <a type="submit" class="btn btn-danger" href="/adminUrunler">İptal</a>
+        <button type="submit" class="btn btn-warning">Güncelle</button>
+    </div>
+
+</form>
+   
+
+
+
+</div>

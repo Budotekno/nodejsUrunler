@@ -1,0 +1,38 @@
+
+<div class="container">
+
+    <br>
+<form action="/adminKullaniciEdit" method="post">
+
+    <% data.forEach(i => { %>
+
+
+        <div class="mb-3" hidden>
+            <input type="text" class="form-control" value="<%= i.id %> "  name="id" placeholder="Kullanıcı adını yazınız...">
+        </div>
+
+        <div class="mb-3">
+            <label for="">Kullanıcı Adı</label>
+            <input type="text" required class="form-control" value="<%= i.kullaniciAdi %> "  name="kullaniciAdi" placeholder="Kullanıcı adını yazınız...">
+        </div>
+    
+        <div class="mb-3">
+            <label for="">Şifre</label>
+            <input type="text" required class="form-control" value="<%= i.sifre %> " name="sifre" placeholder="Şifreyi yazınız...">
+        </div>
+
+    <% }) %>
+
+   
+
+    <div class="mb-3">
+        <a type="submit" class="btn btn-danger" href="/adminKullanicilar">İptal</a>
+        <button type="submit" class="btn btn-warning">Güncelle</button>
+    </div>
+
+</form>
+   
+
+
+
+</div>
